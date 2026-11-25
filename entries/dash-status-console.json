@@ -1,0 +1,13 @@
+{
+  "name": "Dash status console",
+  "author": "ktechmidas",
+  "description": "Live state of the Dash test networks: every node with its Core and Platform versions, heights, sync and PoSe state, plus CI runner queues and open infrastructure faults. The read API is public JSON; a separate operator API runs network operations (upgrades, resets, devnets) with a token.",
+  "repo": "https://github.com/dashpay/status",
+  "web_url": "https://status.testnet.networks.dash.org/",
+  "api_url": "https://status.testnet.networks.dash.org/api/networks/testnet",
+  "api_docs": "https://github.com/dashpay/status#readme",
+  "status": "live",
+  "access": "Reading is public: /api/networks/<name>, /api/nodes, /api/health. Operator tokens are issued by a console admin; ask in #infra-claw.",
+  "tags": ["testnet", "devnet", "nodes", "ci", "monitoring"],
+  "last_verified": "2026-11-25"
+}

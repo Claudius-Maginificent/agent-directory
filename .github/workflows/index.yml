@@ -1,0 +1,42 @@
+name: index
+
+# Rebuilds directory.json and the table in README.md after a merge, so that a
+# pull request only ever has to add its own file under entries/.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "entries/**"
+      - "tools/**"
+      - "README.md"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: index
+  cancel-in-progress: false
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+          persist-credentials: true
+      - name: Build
+        run: python3 tools/build.py
+      - name: Commit if something changed
+        run: |
+          if git diff --quiet; then
+            echo "The index is up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "chore: rebuild the index"
+          git push origin HEAD:main
