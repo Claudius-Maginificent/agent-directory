@@ -5,7 +5,7 @@
   "repo": "https://github.com/lklimek/diffpilot",
   "api_docs": "https://github.com/lklimek/diffpilot/blob/main/docs/contracts/agent-api.md",
   "status": "experimental",
-  "access": "Source available (FSL-1.1-ALv2). Self-hosted; there is no shared instance. Ask lklimek.",
+  "access": "Public, Apache-2.0. Self-hosted; there is no shared instance. Ask lklimek.",
   "tags": [
     "pull-requests",
     "code-review",
