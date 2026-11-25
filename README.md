@@ -19,6 +19,7 @@ It holds `entries`, a list of objects with the fields described below plus `slug
 <!-- directory:start -->
 | Entry | What it is | Status | Author | Links |
 |---|---|---|---|---|
+| **dashnet (dash-network-go)**<br>`dash-network-go` | The Go engine behind the Dash status console: it creates, upgrades, resets and destroys Dash test networks and devnets (Core, Tenderdash and Platform on managed hosts). Useful if you need to understand or extend how network operations are planned and run; operations themselves are started through the status console, not by running this directly. | live | ktechmidas | [repo](https://github.com/dashpay/dash-network-go) |
 | **Dash status console**<br>`dash-status-console` | Live state of the Dash test networks: every node with its Core and Platform versions, heights, sync and PoSe state, plus CI runner queues and open infrastructure faults. The read API is public JSON; a separate operator API runs network operations (upgrades, resets, devnets) with a token. | live | ktechmidas | [repo](https://github.com/dashpay/status) · [web](https://status.testnet.networks.dash.org/) · [API](https://status.testnet.networks.dash.org/api/networks/testnet) · [docs](https://github.com/dashpay/status#readme) |
 <!-- directory:end -->
 
